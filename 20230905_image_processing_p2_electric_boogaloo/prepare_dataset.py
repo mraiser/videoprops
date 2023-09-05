@@ -142,9 +142,13 @@ def grab(filename):
                 if founda >= min_volume:
                     a = pad(a, w, h, body_padding)
                     img2 = oimg[a[1]:a[3], a[0]:a[2]]
-                    f2 = os.path.join(out_body, "BODY_"+str(founda)+"_"+filename)
-                    cv2.imwrite(f2, img2)
-                    b = True
+                    face_locations = face_recognition.face_locations(img2)
+                    if len(face_locations) > 1:
+                        print("Too many faces: "+filename)
+                    else:
+                        f2 = os.path.join(out_body, "BODY_"+str(founda)+"_"+filename)
+                        cv2.imwrite(f2, img2)
+                        b = True
             if b:
                 count += 1
 
