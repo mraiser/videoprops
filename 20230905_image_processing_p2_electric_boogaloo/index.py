@@ -24,7 +24,7 @@ def getEncodings(filename):
     return []
 
 def process(base_filename):
-    print("SCANNING "+base_filename)
+    #print("SCANNING "+base_filename)
     base_encodings = getEncodings(base_filename)
     if (len(base_encodings) > 0):
         base_encodings = [ base_encodings[0] ]
