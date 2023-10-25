@@ -1,0 +1,5 @@
+python -m venv venv
+source venv/bin/activate
+CMAKE_ARGS="-DLLAMA_CUBLAS=on" FORCE_CMAKE=1 pip install llama-cpp-python[server]
+python3 -m llama_cpp.server --model models/dolphin-2.1-mistral-7b.Q4_0.gguf 
+ln -s ../llama.cpp/models models
