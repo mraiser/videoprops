@@ -1,0 +1,13 @@
+cd ai/chuckme
+git clone https://github.com/lm-sys/FastChat.git
+cd FastChat/
+cp -R ../../FastChat/ehartford_dolphin-2.1-mistral-7b ehartford_dolphin-2.1-mistral-7b
+python -m venv venv
+source venv/bin/activate
+pip3 install -e ".[model_worker,webui]"
+kgx -e "source venv/bin/activate; python -m fastchat.serve.openai_api_server --host localhost --port 8000"
+kgx -e nix-shell -p conda --run "conda-shell -c 'source venv/bin/activate; python -m fastchat.serve.model_worker --model-path ehartford_dolphin-2.1-mistral-7b'"
+python -m fastchat.serve.controller
+
+cd /home/mraiser/ai/chuckme/autogen
+nix-shell --run 'source venv/bin/activate; python agengtchat.py'
