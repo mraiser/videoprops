@@ -1,0 +1,12 @@
+Servers:
+  - api_like_OAI.py
+    https://github.com/ggerganov/llama.cpp/blob/master/examples/server/api_like_OAI.py
+  - llama-cpp-python
+    https://github.com/abetlen/llama-cpp-python#web-server
+  - FastChat
+    https://github.com/lm-sys/FastChat
+  - text-generation-webui
+    https://github.com/oobabooga/text-generation-webui
+  - LocalAI
+    https://github.com/go-skynet/LocalAI
+  
