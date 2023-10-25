@@ -1,0 +1,10 @@
+cd ai/chuckme
+git clone https://github.com/oobabooga/text-generation-webui.git
+cd text-generation-webui/
+nix-shell -p conda
+cp -R ../../FastChat/ehartford_dolphin-2.1-mistral-7b models/ehartford_dolphin-2.1-mistral-7b
+./start_linux.sh --model ehartford_dolphin-2.1-mistral-7b
+# Launch Web UI, go to session tab, enable api + openai, SAVE settings.yaml
+
+cd /home/mraiser/ai/chuckme/autogen
+nix-shell --run 'source venv/bin/activate; python agengtchat.py'
