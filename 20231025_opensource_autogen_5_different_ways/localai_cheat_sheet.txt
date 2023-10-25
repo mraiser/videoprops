@@ -1,0 +1,22 @@
+cd ai/chuckme
+git clone https://github.com/go-skynet/LocalAI.git
+cd LocalAI/
+cp ../llama.cpp/models/dolphin-2.1-mistral-7b.Q4_0.gguf models/dolphin-2.1-mistral-7b.Q4_0.gguf
+nix-shell -p gcc cmake pkg-config grpc protobuf openssl cudatoolkit
+export GOROOT=/home/mraiser/work/go
+make CFLAGS='-Wno-format -Wno-format-security' CXXFLAGS='-Wno-format -Wno-format-security' BUILD_TYPE=cublas build
+make -C go-ggml-transformers BUILD_TYPE= libtransformers.a
+make CFLAGS='-Wno-format -Wno-format-security' CXXFLAGS='-Wno-format -Wno-format-security' BUILD_TYPE=cublas build
+make -C go-bert libgobert.a
+make CFLAGS='-Wno-format -Wno-format-security' CXXFLAGS='-Wno-format -Wno-format-security' BUILD_TYPE=cublas build
+export LD_LIBRARY_PATH=/nix/store/wx2p6fjgnjzpfiphvwajx4x90a21x9hx-cudatoolkit-11.8.0/lib/:/nix/store/apqz8p7bk4yxg40cvw71b0wff8jiy5xi-cudatoolkit-11.8.0-lib/lib/
+./local-ai
+
+cd /home/mraiser/ai/chuckme/autogen
+nix-shell --run 'source venv/bin/activate; python agengtchat.py'
+
+curl http://localhost:8080/v1/chat/completions -H "Content-Type: application/json" -d '{
+     "model": "dolphin-2.1-mistral-7b.Q4_0.gguf",
+     "messages": [{"role": "user", "content": "How are you?"}],
+     "temperature": 0.9 
+   }'
