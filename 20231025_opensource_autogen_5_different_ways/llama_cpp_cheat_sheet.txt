@@ -20,6 +20,7 @@ cd ../
 ./server -m models/dolphin-2.1-mistral-7b.Q4_0.gguf -c 2048
 
 python -m venv venv
+source venv/bin/activate
 pip install flask requests
 cd examples/server
 python api_like_OAI.py
