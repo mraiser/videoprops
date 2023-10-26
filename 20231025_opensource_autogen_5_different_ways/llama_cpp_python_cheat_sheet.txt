@@ -1,8 +1,8 @@
 git clone https://github.com/abetlen/llama-cpp-python.git
 cd llama-cpp-python
+ln -s ../llama.cpp/models models
 nix-shell -p ninja
 python -m venv venv
 source venv/bin/activate
 CMAKE_ARGS="-DLLAMA_CUBLAS=on" FORCE_CMAKE=1 pip install llama-cpp-python[server]
 python3 -m llama_cpp.server --model models/dolphin-2.1-mistral-7b.Q4_0.gguf 
-ln -s ../llama.cpp/models models
