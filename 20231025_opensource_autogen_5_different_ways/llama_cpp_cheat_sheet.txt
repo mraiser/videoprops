@@ -22,3 +22,6 @@ python -m venv venv
 pip install flask requests
 cd examples/server
 python api_like_OAI.py
+
+cd /home/mraiser/ai/chuckme/autogen
+nix-shell --run 'source venv/bin/activate; python agengtchat.py'
