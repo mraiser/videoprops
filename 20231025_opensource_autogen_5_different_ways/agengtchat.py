@@ -4,7 +4,7 @@ config_list = [
     {
         "model": "dolphin-2.1-mistral-7b.Q4_0.gguf",
         "api_type": "open_ai",
-        "api_base": "http://127.0.0.1:8080/v1",
+        "api_base": "http://127.0.0.1:8081/v1",
         "api_key": "NULL"
     }
 ]
