@@ -1,7 +1,6 @@
-git clone https://github.com/abetlen/llama-cpp-python.git
+mkdir llama-cpp-python
 cd llama-cpp-python
 ln -s ../llama.cpp/models models
-nix-shell -p ninja
 python -m venv venv
 source venv/bin/activate
 CMAKE_ARGS="-DLLAMA_CUBLAS=on" FORCE_CMAKE=1 pip install llama-cpp-python[server]
