@@ -1,0 +1,9 @@
+mkdir autogen
+cd autogen
+wget https://raw.githubusercontent.com/mraiser/videoprops/main/20231025_opensource_autogen_5_different_ways/default.nix
+wget https://raw.githubusercontent.com/mraiser/videoprops/main/20231025_opensource_autogen_5_different_ways/agengtchat.py
+nix-shell
+python -m venv venv
+source venv/bin/activate
+pip install pyautogen
+python agengtchat.py
