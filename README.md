@@ -4,6 +4,12 @@ Files linked to by my videos
 ## Cheat Sheets
    - [Scrape Instagram](./20230821_image_processing/scrape_insta.js)
    - [Extract Faces](./20230905_image_processing_p2_electric_boogaloo/extract_faces.py)
+   - [Install Autogen](./20231025_opensource_autogen_5_different_ways/autogen_cheat_sheet.txt)
+   - [Install FastChat](./20231025_opensource_autogen_5_different_ways/fastchat_cheat_sheet.txt)
+   - [Install llama.cpp](./20231025_opensource_autogen_5_different_ways/llama_cpp_cheat_sheet.txt)
+   - [Install llama-cpp-python](./20231025_opensource_autogen_5_different_ways/llama_cpp_python_cheat_sheet.txt)
+   - [Install LocalAI](./20231025_opensource_autogen_5_different_ways/localai_cheat_sheet.txt)
+   - [Install text-generation-webui](./20231025_opensource_autogen_5_different_ways/tgwu_cheat_sheet.txt)
 
 ## Videos
 
