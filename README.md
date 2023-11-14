@@ -1,6 +1,10 @@
 # alert('hey');
 Files linked to by my videos
 
+## Cheat Sheets
+   - [Scrape Instagram](./20230821_image_processing/scrape_insta.js)
+   - [Extract Faces](./20230905_image_processing_p2_electric_boogaloo/extract_faces.py)
+
 October 25, 2023 [Open Source Autogen 5 different ways using Dolphin Mistral 7B](https://github.com/mraiser/videoprops/tree/main/20231025_opensource_autogen_5_different_ways)
    [![Watch the video](https://img.youtube.com/vi/nxN-yW4_ilA/maxresdefault.jpg)](https://www.youtube.com/watch?v=nxN-yW4_ilA)
    Open Source Autogen 5 different ways using Dolphin Mistral 7B
