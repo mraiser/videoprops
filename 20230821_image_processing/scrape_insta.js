@@ -41,6 +41,13 @@ function saveJSON(content, fileName) {
 }
 
 function mrClickNext(){
+  var a = document.getElementsByTagName("button");
+  for (let i=0;i<a.length;i++) { 
+    if (a[i].getAttribute('aria-label') == "Next") {
+      a[i].click();
+      return true;
+    }
+  }
   var a = document.getElementsByTagName("svg");
   for (let i=0;i<a.length;i++) { 
     if (a[i].getAttribute('aria-label') == "Next") {
